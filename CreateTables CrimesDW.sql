@@ -20,33 +20,25 @@ Use CrimesDW_Diagram
 Go
 
 PRINT '';
-PRINT '*** Creating Table DimDate';
-GO
-
-Create Table DimDate
-(
-DateID int primary key identity,
-DateNum varchar(20)
-)
-Go
-
-PRINT '';
 PRINT '*** Creating Table DimLocation';
 GO
 
 Create Table DimLocation
 (
 LocationID int primary key identity,
-Beat int,
+Location varchar(400),
+Beat varchar(100),
 Neighborhood varchar(100),
-Npu varchar(1),
-Lat float,
-Long float,
-Road varchar(200),
+Npu varchar(10),
+Lat varchar(max),
+Long varchar(max),
+House varchar(100),
+Road varchar(100),
+Neighboorhood_lookup varchar(100),
 City varchar(100),
 County varchar(100),
 State varchar(100),
-Postcode int,
+Postcode varchar(100),
 Country varchar(100)
 )
 Go
@@ -59,6 +51,17 @@ Create Table DimType
 (
 TypeID int primary key identity,
 TypeName varchar(100)
+)
+Go
+
+PRINT '';
+PRINT '*** Creating Table DimDate';
+GO
+
+Create Table DimDate
+(
+DateID int primary key identity,
+DateNum varchar(100)
 )
 Go
 
